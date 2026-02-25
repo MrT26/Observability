@@ -1,0 +1,8 @@
+{
+    "production": ${ANGULAR_PRODUCTION:-false
+    },
+    "apiUrl": "${ANGULAR_API_URL:-http://localhost:3000}",
+    "apiTimeout": ${ANGULAR_API_TIMEOUT: -30000
+    },
+    "logLevel": "${ANGULAR_LOG_LEVEL:-info}"
+}

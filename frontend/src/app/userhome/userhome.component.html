@@ -1,0 +1,93 @@
+<div class="container-fluid">
+    <div class="row">
+      <div>
+        <h1>Welcome {{ user.name }}</h1>
+        <br />
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col-md-4 col-12 col-xl-3">
+          <div class="card bg-c-blue order-card">
+              <div class="card-block">
+                  <h6 class="m-b-20">Amount</h6>
+                  <h2 class="text-right"><img src="assets/images/rupee.png" class="f-left" height="30" width="30" alt=""> <span>{{user.availableBalance}}</span></h2>
+                  <p class="m-b-0" style="margin-left: 20px;">Available Balance</p>
+                 
+              </div>
+          </div>
+      </div>
+      
+      <div class="col-md-4 col-12 col-xl-3">
+          <div class="card bg-c-green order-card">
+              <div class="card-block">
+                  <h6 class="m-b-20">Transactions</h6>
+                  <h2 class="text-right"> <img src="assets/images/credit.png" class="f-left" height="50" width="50" alt=""> <span>{{len}}</span></h2>
+                  <p class="m-b-0">Total No of Transactions</p>
+              </div>
+          </div>
+      </div>
+      
+      <div class="col-md-4 col-12 col-xl-3">
+          <div class="card bg-c-yellow order-card">
+              <div class="card-block">
+                  <h6 class="m-b-20">Spendings</h6>
+                  <h2 class="text-right"><img src="assets/images/trans.webp" class="f-left" height="50" width="50" alt=""><span>{{spendingstotal}}</span></h2>
+                  <p class="m-b-0">Total Spendings</p>
+              </div>
+          </div>
+      </div>
+      
+      <div class="col-md-4 col-xl-3">
+          <div class="card bg-c-pink order-card">
+              <div class="card-block">
+                  <h6 class="m-b-20">Rewards</h6>
+                  <h2 class="text-right"><img src="assets/images/rewards.png" class="f-left" height="50" width="50" alt=""><span>8</span></h2>
+                  <p class="m-b-0">Reward Points</p>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+  
+    <!-- <div class="row">
+      
+        <div class="col-md-3">
+          <div class="card tr1">
+            <div calss="card-header ">
+              <h1 class="p-2 text-white">
+                Jan &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <i class="fa-solid fa-dollar-sign fa-flip"></i>
+                <h5 class="p-2 text-white">
+                 Total Spending {{janamount|currency:'INR'}}
+                </h5>
+              </h1>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card tr1">
+            <div calss="card-header ">
+              <h1 class="p-2 text-white">
+                Feb &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <i class="fa-solid fa-dollar-sign fa-flip"></i>
+                <h5 class="p-2 text-white">
+                  TotalSpendings {{febamount|currency:'INR'}}
+                </h5>
+              </h1>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mt-5">
+          <a  routerLink="/navbar/expencetracking">View More</a>
+        </div>
+      </div> -->
+    
+     
+    </div>
+  
+   
+  
+  <br />
+  <br />
+  

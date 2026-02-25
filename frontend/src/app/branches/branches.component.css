@@ -1,0 +1,9 @@
+.br{
+    position: relative;
+    left:700px;
+    top:-50px;
+}
+::placeholder{
+    color: rgb(64, 62, 62);
+    
+}

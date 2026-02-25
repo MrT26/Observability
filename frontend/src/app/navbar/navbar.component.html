@@ -1,0 +1,97 @@
+<div class="wrapper d-flex align-items-stretch">
+    <nav id="sidebar" [class.active]="isselected" #myTag>
+      <div class="custom-menu">
+        <button
+          type="button"
+          (click)="togglebar()"
+          id="sidebarCollapse"
+          class="btn btn-primary"
+        >
+        <i class="fa fa-caret-left"></i>
+    </button>
+      </div>
+      <div
+        class="img bg-wrap text-center py-4"
+        style="background-image: url(assets/images/bg_1.jpg)"
+      >
+        <div class="user-logo">
+          <div
+            class="img"
+            style="background-image: url(assets/mainlogo.png)"
+          ></div>
+          <h3>{{ username }}</h3>
+        </div>
+      </div>
+      <ul class="list-unstyled components mb-5">
+        <li class="active">
+          <a
+            routerLink="/customer/home"
+            routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <span class="fa fa-home mr-3"></span>Home
+          </a>
+        </li>
+        <li>
+          <a
+            routerLink="/customer/transfer"
+            routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <span class="fa-regular fa-credit-card mr-3 notif">
+              <!-- <small class="d-flex align-items-center justify-content-center">5</small> --> </span
+            >Transfer
+          </a>
+        </li>
+        <!-- <li>
+          <a routerLink="#" ><span class="fa-solid fa-check-to-slot mr-3"></span>Limits</a>
+        </li> -->
+        <li>
+          <a
+            routerLink="/customer/history"
+            routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{ exact: true }"
+            ><span class="fa-solid fa-history mr-3"></span> History</a
+          >
+        </li>
+        <li>
+            <a
+              routerLink="/customer/rewards"
+              routerLinkActive="active-link"
+              [routerLinkActiveOptions]="{ exact: true }"
+              ><span class="fa-solid fa-award mr-3"></span> Rewards</a
+            >
+          </li>
+          <li>
+            <a
+              routerLink="/customer/profile"
+              routerLinkActive="active-link"
+              [routerLinkActiveOptions]="{ exact: true }"
+              ><span class="fa-solid fa-user-circle mr-3"></span> Profile</a
+            >
+          </li>
+          <li>
+            <a
+              routerLink="/customer/details"
+              routerLinkActive="active-link"
+              [routerLinkActiveOptions]="{ exact: true }"
+              ><span class="fa-solid fa-search mr-3"></span> Find Details</a
+            >
+          </li>
+          <li>
+            <a
+              routerLink=""
+              routerLinkActive="active-link"
+              [routerLinkActiveOptions]="{ exact: true }"
+              (click)="logout()"><span class="fa-solid fa-sign-out mr-3"></span> Sign Out</a
+            >
+          </li>
+      </ul>
+    </nav>
+  
+    <!-- Page Content  -->
+    <div id="content" class="p-4 p-md-5 pt-5">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  

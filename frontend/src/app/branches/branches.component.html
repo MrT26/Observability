@@ -1,0 +1,69 @@
+
+<div class="row">
+    <div class="col-md-12">
+        <h1>Branches</h1>
+        <button class="btn btn-primary br" data-bs-target="#mymodal" data-bs-toggle="modal">Create New Branch</button>
+        <table class="table table-bordered table-hovered">
+            <tr>
+                <th>Branch Name</th>
+                <th>Branch IFSC Code</th>
+                <th>Branch Address</th>
+                <th>Branch Phone</th>
+                <th>Branch Manager</th>
+                <th>Manage</th>
+            </tr>
+            <tr *ngFor="let b of branches">
+                <td>{{b.branchName}}</td>
+                <td>{{b.ifscCode}}</td>
+                <td>{{b.address}}</td>
+                <td>{{b.contactDetails}}</td>
+                <td>{{b.branchManager}}</td>
+                <td>
+                    <button class="btn btn-warning">Edit</button>
+                    <button class="btn btn-danger ms-3">Delete</button>
+                </td>
+            </tr>
+
+        </table>
+    </div>
+</div>
+
+
+<div class="modal fade" id="mymodal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Create New Branch</h3>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form (ngSubmit)="addbranch()">
+                    <div class="form-group">
+                        <label>Branch Name</label>
+                        <input type="text" class="form-control" name="bname" [(ngModel)]="bName" placeholder="Branch Name">
+                    </div>
+                    <div class="form-group">
+                        <label>IFSC Code</label>
+                        <input type="text" class="form-control" name="ifsc" [(ngModel)]="ifsc" placeholder="Branch Code">
+                    </div>
+                    <div class="form-group">
+                        <label>Address</label>
+                        <input type="text" class="form-control" name="addr" [(ngModel)]="baddress" placeholder="Branch Address">
+                    </div>
+                    <div class="form-group">
+                        <label>Branch Manager</label>
+                        <input type="text" class="form-control" name="bman" [(ngModel)]="bmanager" placeholder="Branch Manager">
+                    </div>
+                    <div class="form-group">
+                        <label>Branch Contact Details</label>
+                        <input type="text" class="form-control" name="bcon" [(ngModel)]="bcontact" placeholder="Branch Contact Details">
+                    </div>
+                    <div class="form-group d-flex justify-content-end">
+                        <button class="btn btn-success" type="submit" data-bs-dismiss="modal">Submit</button>
+                        <button class="btn btn-danger ms-2">Cancel</button>
+                    </div>
+                    </form>
+                    </div>
+                    </div>
+    </div>
+</div>

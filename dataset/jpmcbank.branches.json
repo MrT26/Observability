@@ -1,0 +1,10 @@
+[{
+  "_id": {
+    "$oid": "67c191861da623ba31438534"
+  },
+  "branchName": "Miyapur",
+  "ifscCode": "SBIN0000052",
+  "address": "Plot No. 12, Miyapur Main Road, Hyderabad, Telangana, 500049",
+  "branchManager": "Anil Kumar Sharma",
+  "contactDetails": "+91 9876543210"
+}]

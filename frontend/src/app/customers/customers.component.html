@@ -1,0 +1,219 @@
+
+<div class="row">
+    <div class="col-md-12">
+        <h1>Customers</h1>
+        <button class="btn btn-primary br" data-bs-target="#mymodal" data-bs-toggle="modal">Create customer</button>
+        <table class="table table-bordered table-hovered">
+            <tr>
+                <th>customer Name</th>
+                <th>customer Branch</th>
+                <th>customer Email</th>
+                <th>customer Mobile</th>
+                <th>Manage</th>
+            </tr>
+            <tr *ngFor="let b of customersWithBranches">
+                <td>{{b.name}}</td>
+                <td>{{b.branchName}}</td>
+                <td>{{b.email}}</td>
+                <td>{{b.mobile}}</td>
+                <td>
+                    <button class="btn btn-warning">Edit</button>
+                    <button class="btn btn-danger ms-3">Delete</button>
+                </td>
+            </tr>
+
+        </table>
+    </div>
+</div>
+
+<div class="modal fade" id="mymodal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Create New Customer</h3>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form #signupForm="ngForm" (ngSubmit)="registernow()">
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-control-label text-muted">Username</label>
+                                <input
+                                  type="text"
+                                  id="username"
+                                  name="username"
+                                  placeholder="Username"
+                                  class="form-control"
+                                  [(ngModel)]="username"
+                                  required
+                                />
+                              </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-control-label text-muted">Email</label>
+                                <input
+                                  type="email"
+                                  id="email"
+                                  name="email"
+                                  placeholder="Email"
+                                  class="form-control"
+                                  [(ngModel)]="email"
+                                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                  required
+                                />
+                                </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-control-label text-muted">Mobile</label>
+                                <input
+                                  type="text"
+                                  id="mobile"
+                                  name="mobile"
+                                  placeholder="Mobile"
+                                  class="form-control"
+                                  [(ngModel)]="mobile"
+                                  pattern="[0-9]{10}"
+                                  required
+                                />
+                               
+                              </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-control-label text-muted">Aadhar</label>
+                                <input
+                                  type="text"
+                                  id="aad"
+                                  name="psw"
+                                  placeholder="Aadhar Number"
+                                  class="form-control"
+                                  required
+                                />
+                              </div>
+                        </div>
+                    </div>
+                  
+                    <div class="row">
+                        <div class="col-md-6">
+
+                            <div class="form-group">
+                                <label class="form-control-label text-muted">Account type</label>
+                                
+                                <select name="acc" id="accounttype" [(ngModel)]="accounttype" class="form-select" >
+                                    <option disabled selected>account type</option>
+                                    <option value="savings">savings</option>
+                                    <option value="current">Current</option>
+                                </select>
+                                
+                                </div>
+                        </div>
+                        <div class="col-md-6">
+
+                            <div class="form-group">
+                                <label class="form-control-label text-muted">Opening Balance</label>
+                                <input
+                                  type="text"
+                                  id="bal"
+                                  name="bal"
+                                  placeholder="Opening Balance"
+                                  class="form-control"
+                                  [(ngModel)]="availableBalance"
+                                  pattern="[0-9]{2,}"
+                                  required
+                                />
+                              </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-control-label text-muted">Gender</label>
+                                
+                                <select name="gen" id="gender" [(ngModel)]="gender" class="form-select" >
+                                    <option disabled selected>Gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="no">Prefer Not to Say</option>
+                                </select>
+                                
+                                </div>
+                        </div>
+                        <div class="col-md-6">
+
+                            <div class="form-group">
+                                <label class="form-control-label text-muted">Branches</label>
+                                <select 
+                                  [(ngModel)]="selectedBranchId" 
+                                  name="selectedBranchId" 
+                                  id="selectedBranchId" 
+                                  class="form-select" 
+                                  required>
+                                  <option value="" disabled selected>Select a branch</option>
+                                  <option *ngFor="let branch of branches" [value]="branch._id">{{ branch.branchName }}</option>
+                                </select>
+                              </div>
+                        </div>
+                    </div>
+                  
+                  
+
+                    
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="form-control-label text-muted">Password</label>
+                            <input
+                              type="password"
+                              id="psw"
+                              name="psw"
+                              placeholder="Password"
+                              class="form-control"
+                              [(ngModel)]="password"
+                              required
+                            />
+                          </div>
+                    </div>
+
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="form-control-label text-muted"
+                            >Confirm Password</label
+                          >
+                          <input
+                            type="password"
+                            id="cpsw"
+                            name="cpsw"
+                            placeholder="Confirm Password"
+                            class="form-control"
+                            [(ngModel)]="confirmPassword"
+                            required
+                          />
+                      </div>
+                  </div>
+
+                 
+  
+                  <div class="row justify-content-center my-3 px-3">
+                    <button
+                      type="submit"
+                      class="btn-block btn-color"
+                      [disabled]="signupForm.invalid"
+                    >
+                      Signup to Swadesi Bank
+                    </button>
+                  </div>
+                  </div>
+                
+                </form>
+                    </div>
+                    </div>
+    </div>
+</div>

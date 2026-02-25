@@ -1,0 +1,27 @@
+
+<h1>Branch Stats</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Branch</th>
+        <th>Customers</th>
+        <th>Revenue</th>
+    </tr>
+    <tr *ngFor="let s of stats">
+        <td>{{s.branchName}}</td>
+        <td>{{s.customerCount}}</td>
+        <td>{{s.totalNetValue}}</td>
+    </tr>
+</table>
+
+<h1>Transactions Graph</h1>
+<div style="display: block; width:700px">
+    <canvas
+      baseChart
+      [data]="barChartData"
+      [options]="barChartOptions"
+      chartType="bar">
+    </canvas>
+  </div>
+  
+

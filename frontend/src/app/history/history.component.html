@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-md-6">
+        <h1>Sent Transactions</h1>
+        <table class="table">
+            <tr>
+                <td>Id</td>
+                <td>Amount</td>
+                <td>Date</td>
+            </tr>
+            <tr *ngFor="let sp of spendings">
+                <td>{{ sp.receiverId }}</td>
+                <td>{{ sp.amount }}</td>
+                <td>{{ sp.date | date}}</td>
+            </tr>
+        </table>
+    </div>
+    <div class="col-md-6">
+        <h1>Received Transactions</h1>
+        <table class="table">
+            <tr>
+                <td>Id</td>
+                <td>Amount</td>
+                <td>Date</td>
+            </tr>
+            <tr *ngFor="let sp of earnings">
+                <td>{{ sp.senderId }}</td>
+                <td>{{ sp.amount }}</td>
+                <td>{{ sp.date | date}}</td>
+            </tr>
+        </table>
+    </div>
+</div>

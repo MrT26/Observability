@@ -1,0 +1,51 @@
+[{
+  "_id": {
+    "$oid": "68875d87c3d33a5b35325593"
+  },
+  "name": "Abhishek",
+  "mobile": "6300855406",
+  "email": "vuppalaabhishek05@gmail.com",
+  "gender": "male",
+  "accountType": "savings",
+  "branch": {
+    "$oid": "67c191861da623ba31438534"
+  },
+  "password": "$2b$10$iBPp.z1bMeFNPRiSKKIZyOqXvRHCgSS6XKjL9OfwVhW8beMDbHkfq",
+  "availableBalance": 23000,
+  "role": "customer",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698db7fa64559f7bfd9b60ec"
+  },
+  "name": "Abhisek",
+  "mobile": "9866812780",
+  "email": "hello12234556@gmail.com",
+  "gender": "male",
+  "accountType": "savings",
+  "branch": {
+    "$oid": "67c191861da623ba31438534"
+  },
+  "password": "$2b$10$HLweYE7lwFZVhjJICa8pveA0m8CQQQjCbIC5joEuhMnDLbamq4eCu",
+  "availableBalance": 30000,
+  "role": "customer",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698dd22ab1ee5ad905a90c5c"
+  },
+  "name": "Deepak",
+  "mobile": "8127488609",
+  "email": "vuppalaabhishek43@gmail.com",
+  "gender": "male",
+  "accountType": "savings",
+  "branch": {
+    "$oid": "67c191861da623ba31438534"
+  },
+  "password": "$2b$10$devz1CNlN9F9ajTKt23kn.Bn5MaLZSiqpqZdwwaLIc5Kp.79nCjoO",
+  "availableBalance": 50000,
+  "role": "customer",
+  "__v": 0
+}]

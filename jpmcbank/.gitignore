@@ -1,0 +1,156 @@
+# Dependencies
+node_modules/
+npm-debug.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# npm
+package-lock.json
+yarn.lock
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE and editor files
+.vscode/
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/settings.json
+!.vscode/tasks.json
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Mac OS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Linux
+.directory
+
+# Temporary files
+*.swp
+*.swo
+*~
+.tmp
+*.tmp
+
+# Logs
+logs/
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Build directories
+dist/
+build/
+out/
+
+# Miscellaneous
+.cache/
+.vuepress/dist/
+site/
+
+# OS specific
+*.class
+*.jar
+*.war
+
+# Global ignores for the entire project
+
+# Node modules (all levels)
+node_modules/
+**/node_modules/
+**/node_modules/**
+
+# npm and yarn
+npm-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build outputs
+dist/
+build/
+out/
+
+# Logs
+*.log
+logs/
+
+# Caches
+.cache/
+.angular/
+.sass-cache/
+
+# Coverage
+coverage/
+/coverage
+
+# Dependencies
+/node_modules
+/jspm_packages
+
+# Build outputs
+/dist
+/tmp
+/out-tsc
+/.angular/cache
+
+# Tests
+/coverage
+/playwright-report
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.sublime-workspace

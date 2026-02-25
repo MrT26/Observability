@@ -1,0 +1,61 @@
+
+.navbar-brand{
+    font-size: 25px;
+    color: #000;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.myc{
+  position: absolute;
+  top:-10px;
+  left:-15px;
+  height: 600px;
+  width:1600px;
+  
+}
+nav{
+  position: absolute;
+  z-index: 20;
+  background-color: rgba(255, 255,255,0.5);
+  width: 100%;
+ 
+}
+.navbar-brand{
+  position: relative;
+  left: 20px;
+}
+.mynav{
+  display: flex;
+  justify-content: end;
+  position: absolute;
+  top:20px;
+  left:900px;
+}
+
+.mynav>li{list-style-type: none;}
+.mynav>li>a{
+  color: #000;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 10px;
+  text-decoration: none;
+}
+
+
+.who{
+  position: relative;
+  top:900px;
+}
+
+.coup{
+  position: relative;
+  top: 1000px;
+}
+
+.foo{
+  background-color: #000;
+  position: relative;
+  top: 1200px;
+}

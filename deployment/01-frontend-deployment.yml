@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+  namespace: bankapplication
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+      - name: frontend
+        image: ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/bankapplication-frontend:latest
+        ports:
+        - containerPort: 80
+        env:
+        - name: ANGULAR_API_URL
+          value: "http://api.bankapplication.example.com"
+        - name: ANGULAR_PRODUCTION
+          value: "true"
+        - name: ANGULAR_API_TIMEOUT
+          value: "30000"
+        - name: ANGULAR_LOG_LEVEL
+          value: "info"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"

@@ -1,0 +1,112 @@
+                       Observability Stack User Guide
+
+Application: Node.js + MongoDB
+Monitoring Stack: Prometheus + Grafana + Loki + Promtail + cAdvisor + MongoDB Exporter
+
+🏗️ 1. Architecture Overview
+| Component        | Purpose                            |
+| ---------------- | ---------------------------------- |
+| Node.js Backend  | Application logic + custom metrics |
+| MongoDB          | Database                           |
+| Prometheus       | Metrics collection                 |
+| Grafana          | Visualization dashboards           |
+| Loki             | Log aggregation                    |
+| Promtail         | Log shipper                        |
+| cAdvisor         | Container metrics                  |
+| MongoDB Exporter | Mongo metrics                      |
+
+
+🔄 Observability Flow
+
+Application → /metrics → Prometheus → Grafana
+Docker Logs → Promtail → Loki → Grafana
+Containers → cAdvisor → Prometheus → Grafana
+MongoDB → Mongo Exporter → Prometheus → Grafana
+
+⚙️ 2. Setup Instructions
+Step 1️⃣ – Start the Stack
+docker-compose up -d
+docker ps
+
+Step 2️⃣ – Access Services|
+| Service         | URL                                                            |
+| --------------- | -------------------------------------------------------------- |
+| Frontend        | [http://localhost](http://localhost)                           |
+| Backend API     | [http://localhost:3000](http://localhost:3000)                 |
+| Backend Metrics | [http://localhost:3000/metrics](http://localhost:3000/metrics) |
+| Prometheus      | [http://localhost:9090](http://localhost:9090)                 |
+| Grafana         | [http://localhost:3001](http://localhost:3001)                 |
+| cAdvisor        | [http://localhost:8080](http://localhost:8080)                 |
+| Loki            | [http://localhost:3100](http://localhost:3100)                 |
+
+
+Step 3️⃣ – Configure Grafana
+
+Login to Grafana
+Default credentials:
+
+Username: admin
+Password: admin
+
+Add Data Sources:
+Prometheus → http://prometheus:9090
+Loki → http://loki:3100
+
+Import or create dashboards.
+
+📊 3. What You Can Monitor
+A. Application Metrics (Node.js)
+Collected using prom-client.
+
+1️⃣ HTTP Traffic
+
+   Metric:
+    http_requests_total
+
+   You can monitor:
+    Total request count
+    Requests per second
+    Traffic spikes
+    Per-route traffic
+
+2️⃣ Error Rate
+
+  Query:
+    sum(rate(http_requests_total{status=~"5.."}[5m]))/sum(rate(http_requests_total[5m]))
+
+  You can monitor:
+   4xx errors
+   5xx errors
+   API stability
+   Failure trends
+
+3️⃣ Latency (p90 / p95 / p99)
+
+  Metric:
+    http_request_duration_seconds
+
+  Example query (p95):
+     histogram_quantile(0.95,sum(rate(http_request_duration_seconds_bucket[5m])) by (le))
+
+  You can monitor:
+     p90 latency
+     p95 latency
+     p99 latency
+     Slow endpoints
+     Performance degradation
+
+4️⃣ Node.js Runtime Metrics
+
+  Automatically collected:
+    CPU usage
+    Memory usage
+    Heap size
+    Event loop lag
+    GC activity
+  Useful for:
+    Memory leaks
+    High CPU usage
+    vent loop blocking
+
+
+

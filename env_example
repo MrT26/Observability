@@ -1,0 +1,14 @@
+# Frontend - Backend API URL (for browser)
+# Local development
+ANGULAR_APP_API_URL=http://localhost:4300
+
+# Docker Compose - Backend service name (internal container network)
+# For Docker builds, use: http://backend:3000
+# For browser access: http://localhost:4300
+DOCKER_BACKEND_URL=http://backend:3000
+
+# MongoDB
+MONGO_URI=mongodb://mongo:27017/jpmcbank
+
+# Backend server
+PORT=3000
