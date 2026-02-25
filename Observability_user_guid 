@@ -108,5 +108,103 @@ Collected using prom-client.
     High CPU usage
     vent loop blocking
 
+B.Container Metrics (cAdvisor)
+
+  You can monitor:  
+     Container CPU %
+     Container memory usage
+     Network I/O
+     File system usage
+     Restart count
+
+  Example queries:
+   CPU usage:
+     rate(container_cpu_usage_seconds_total[5m])
+
+   Memory usage:
+     container_memory_usage_bytes
+
+C.MongoDB Metrics (MongoDB Exporter)
+
+  You can monitor:
+    Active connections
+    uery rate
+    Insert/update/delete rate
+    Opcounters
+    Replication stats
+    Cache usage
+    Lock percentage
+
+  Example:
+    Connections:
+      mongodb_connections
+
+    Operations:
+      mongodb_op_counters_total
+
+D.Logs (Loki + Promtail)
+
+  Collected from Docker containers.
+    You can:
+      View application logs
+      Filter by container
+      Search errors
+      Track exceptions
+      Correlate logs with metrics
+
+  Example LogQL query:
+    {container="backend"} |= "error"
+
+E. Prometheus Self-Monitoring
+
+  You can monitor:
+    Prometheus scrape duration
+    Failed scrapes
+    Target health
+    Time series count
+
+  Metric:
+  up
+
+4. Production-Level Observability Coverage
+
+| Layer               | Covered                        |
+| ------------------- | ------------------------------ |
+| Application metrics | ✅                              |
+| API performance     | ✅                              |
+| Error tracking      | ✅                              |
+| Runtime health      | ✅                              |
+| Container health    | ✅                              |
+| Database health     | ✅                              |
+| Logs                | ✅                              |
+| Infrastructure      | Partial                        |
+| Distributed tracing | ❌ (unless OpenTelemetry added) |
+
+
+7.Troubleshooting Guide
+
+   If metrics not visible:
+
+   Check Prometheus targets:
+     http://localhost:9090/targets
+
+   Check /metrics endpoint manually.
+
+   Verify service names inside Docker network.
+
+   If logs missing:
+    Verify promtail config
+    Check Loki connection
+
+   If dashboards disappear:
+     Verify Grafana volume persistence
+
+9. Possible Future Enhancements
+    OpenTelemetry (distributed tracing)= 
+    lertmanager with Slack/email alerts
+    Kubernetes migration
+    Node Exporter for host metrics
+    Tempo for tracing
+
 
 
