@@ -181,7 +181,7 @@ E. Prometheus Self-Monitoring
 | Distributed tracing | ❌ (unless OpenTelemetry added) |
 
 
-7.Troubleshooting Guide
+5.Troubleshooting Guide
 
    If metrics not visible:
 
@@ -199,7 +199,7 @@ E. Prometheus Self-Monitoring
    If dashboards disappear:
      Verify Grafana volume persistence
 
-9. Possible Future Enhancements
+6. Possible Future Enhancements
     OpenTelemetry (distributed tracing)= 
     lertmanager with Slack/email alerts
     Kubernetes migration
